@@ -1,0 +1,27 @@
+@function toRem($pxVal) {
+    @return $pxVal / 16px * 1rem;
+}
+
+@function increaseBy($val, $byPercentage) {
+    @return $val*($byPercentage/100) + $val;
+}
+
+@function multiply($a, $b) {
+    @return $a * $b;
+}
+
+// $breakpoint-up: ("xxlarge": toRem(1220px), "xlarge": toRem(1130px), "large": toRem(1030px), "medium": toRem(970px), "small": toRem(612px));
+// $breakpoint-up: ("xxlarge": toRem(1220px), "xlarge": toRem(1340px), "large": toRem(1030px), "medium": toRem(720px), "small": toRem(524px));
+$breakpoint-up: ("xlarge": toRem(1540px), "large": toRem(850px), "medium": toRem(664px), "small": toRem(469px));
+
+@mixin breakpoint-down ($size) {
+    @media (max-width: map-get($breakpoint-down, $size)){
+        @content;
+    }
+}
+
+@mixin breakpoint-up ($size) {
+    @media (min-width: map-get($breakpoint-up, $size )){
+        @content;
+    }
+}
