@@ -1,13 +1,11 @@
 @import url(https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap);
 html {
   font-size: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *, *::before, *::after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
@@ -16,5 +14,102 @@ body {
   min-height: 100vh;
   font-family: "Kumbh", sans-serif;
   font-size: 0.875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#af67e9, #6565e7);
 }
+
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  background-color: white;
+  width: 20.625rem;
+  flex-shrink: 0;
+  border-radius: 1.25rem;
+  padding: var(--hero-height-half) 1.5rem 0;
+  box-shadow: 0 1.25rem 1.875rem rgba(74, 75, 94, 0.7);
+}
+
+:root {
+  --hero-height-half: 6.75rem;
+  --hero-width-half: 7.625rem;
+  --hero-top: calc(var(--hero-height-half) * -1);
+  --hero-left: calc(50% - var(--hero-width-half));
+}
+
+.hero {
+  position: absolute;
+  top: var(--hero-top);
+  left: var(--hero-left);
+  height: 13.5rem;
+  width: calc(var(--hero-width-half) * 2);
+}
+.hero img {
+  width: 100%;
+}
+.hero #pattern {
+  position: absolute;
+  top: var(--hero-height-half);
+  left: 0;
+}
+
+:root {
+  --t1: 300ms;
+}
+
+.faq {
+  margin-top: 1.875rem;
+}
+.faq .title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: #4a4b5e;
+}
+.faq .sections {
+  margin: 2.25rem 0;
+}
+.faq .sections .section {
+  border-bottom: 1px solid #e7e7e9;
+  padding: 1.25rem 0;
+}
+.faq .sections .section:first-child {
+  padding-top: 0;
+}
+.faq .sections .section .question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq .sections .section .question img {
+  display: inline-block;
+  height: 100%;
+  width: auto;
+}
+.faq .sections .section .question .arrow {
+  background-image: url(../../images/icon-arrow-down.svg);
+  background-repeat: no-repeat;
+  width: 0.625rem;
+  height: 7px;
+  transition: transform var(--t1) linear;
+}
+.faq .sections .section .question .arrow-up {
+  transform: rotate(180deg);
+}
+.faq .sections .section .answer {
+  margin-top: 0;
+  line-height: 1.4em;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--t1) ease-in-out, margin-top 300ms ease-in-out;
+}
+.faq .sections .expand > .question {
+  font-weight: 700;
+}
+.faq .sections .expand > .answer {
+  margin-top: 0.625rem;
+}
+
 /*# sourceMappingURL=styles.css.map */

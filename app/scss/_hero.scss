@@ -1,0 +1,25 @@
+:root {
+    --hero-height-half: #{toRem(108px)};
+    --hero-width-half: #{toRem(122px)};
+    --hero-top: calc(var(--hero-height-half) * -1);
+    --hero-left: calc(50% - var(--hero-width-half));
+}
+
+.hero {
+    position: absolute;
+    top: var(--hero-top);
+    left: var(--hero-left);
+    height: toRem(216px);
+    width: calc(var(--hero-width-half) * 2);
+
+
+    img {
+        width: 100%;
+    }
+
+    #pattern {
+        position: absolute;
+        top: var(--hero-height-half);
+        left: 0;
+    }
+}

@@ -16,4 +16,23 @@ body {
 
     font-family: "Kumbh", sans-serif;
     font-size: $font-xsm;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient($softViolet, $softBlue);
+}
+
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    background-color: white;
+    // width: toRem(375px);
+    width: toRem(330px);
+    flex-shrink: 0;
+    border-radius: toRem(20px);
+    padding: var(--hero-height-half) toRem(24px) 0;
+    box-shadow: 0 toRem(20px) toRem(30px) rgba($color: $veryDarkGrayishBlue, $alpha: 0.7);
 }
