@@ -3,7 +3,17 @@
 }
 
 .faq {
-    margin-top: toRem(30px);
+    padding-top: toRem(30px);
+    color: $veryDarkDesaturatedBlue;
+
+    @include breakpoint-up(small) {
+        width: 55%;
+        padding: toRem(40px)
+    }
+
+    @include breakpoint-up(large) {
+        padding-right: 6%;
+    }
 
     .title {
         text-align: center;
@@ -61,6 +71,10 @@
 
         .expand > .question {
             font-weight: 700;
+        }
+
+        :not(.expand) > .question:hover {
+            color: $softRed;
         }
 
         .expand > .answer {

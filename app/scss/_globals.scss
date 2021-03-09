@@ -25,14 +25,34 @@ body {
 }
 
 .container {
+    margin-top: calc(var(--hero-height-half) + #{toRem(20px)});
+    margin-bottom: toRem(50px);
     display: flex;
     flex-flow: column nowrap;
-    position: relative;
+    align-items: center;
     background-color: white;
-    // width: toRem(375px);
     width: toRem(330px);
     flex-shrink: 0;
     border-radius: toRem(20px);
     padding: var(--hero-height-half) toRem(24px) 0;
+    padding-top: 0px;
     box-shadow: 0 toRem(20px) toRem(30px) rgba($color: $veryDarkGrayishBlue, $alpha: 0.7);
+
+    @include breakpoint-up (small) {
+        width: toRem(670px);
+        flex-flow: row nowrap;
+        padding: 0;
+        align-items: stretch;
+        
+    }
+
+    @include breakpoint-up(medium) {
+        flex-grow: 1;
+        max-width: 70%;
+        justify-content: space-between;
+    }
+
+    @include breakpoint-up(xlarge) {
+        max-width: toRem(842px);
+    }
 }

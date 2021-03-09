@@ -1,25 +1,74 @@
 :root {
-    --hero-height-half: #{toRem(108px)};
-    --hero-width-half: #{toRem(122px)};
+    --hero-height-half: #{toRem(98px)};
+    --hero-width-half: #{toRem(133px)};
     --hero-top: calc(var(--hero-height-half) * -1);
-    --hero-left: calc(50% - var(--hero-width-half));
+    --hero-left: calc(calc(50% - var(--hero-width-half)) - #{toRem(15px)});
 }
 
-.hero {
-    position: absolute;
-    top: var(--hero-top);
-    left: var(--hero-left);
-    height: toRem(216px);
-    width: calc(var(--hero-width-half) * 2);
+.hero-wrapper {
+    position: relative;
+    height: toRem(104px);
+    width: toRem(237px);
+    background-image: url(../../images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
 
-
-    img {
-        width: 100%;
+    @include breakpoint-up(small) {
+        width: 45%;
+        height: auto;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        background-image: url(../../images/bg-pattern-desktop.svg);
+        background-size: auto 140%;        
+        background-position: right;
     }
 
-    #pattern {
-        position: absolute;
-        top: var(--hero-height-half);
-        left: 0;
+    @include breakpoint-up(medium) {
+        max-width: toRem(349px);
+    }
+    
+    .hero {
+        margin-top: calc(-1 * calc(#{toRem(8px)} + var(--hero-height-half)));
+                
+
+        @include breakpoint-up(small) {
+            margin-top: 0;
+            overflow: hidden;
+            display: flex;
+        }
+    
+        img {
+            display: block;
+
+            &#illustration {
+                margin-left: calc(-1 * #{toRem(28px)});
+                content: url(../../images/illustration-woman-online-mobile.svg);
+    
+                @include breakpoint-up(small) {
+                    content: url(../../images/illustration-woman-online-desktop.svg);
+                    margin-left: calc(-1 * #{toRem(70px)});                    
+                    width: toRem(362px);
+                }
+
+                @include breakpoint-up(medium) {
+                    width: 120%;
+                    max-width: toRem(418px);
+                }
+            }
+        }
+    }
+
+    img#desktop-box {
+        display: none;
+
+        @include breakpoint-up(small) {
+            display: block;
+            position: absolute;
+            top: 42%;
+            left: -27%;
+            width: 45%;
+        }
     }
 }
+

@@ -21,38 +21,113 @@ body {
 }
 
 .container {
+  margin-top: calc(var(--hero-height-half) + 1.25rem);
+  margin-bottom: 3.125rem;
   display: flex;
   flex-flow: column nowrap;
-  position: relative;
+  align-items: center;
   background-color: white;
   width: 20.625rem;
   flex-shrink: 0;
   border-radius: 1.25rem;
   padding: var(--hero-height-half) 1.5rem 0;
+  padding-top: 0px;
   box-shadow: 0 1.25rem 1.875rem rgba(74, 75, 94, 0.7);
+}
+@media (min-width: 50.3125rem) {
+  .container {
+    width: 41.875rem;
+    flex-flow: row nowrap;
+    padding: 0;
+    align-items: stretch;
+  }
+}
+@media (min-width: 59.75rem) {
+  .container {
+    flex-grow: 1;
+    max-width: 70%;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 75.1875rem) {
+  .container {
+    max-width: 52.625rem;
+  }
 }
 
 :root {
-  --hero-height-half: 6.75rem;
-  --hero-width-half: 7.625rem;
+  --hero-height-half: 6.125rem;
+  --hero-width-half: 8.3125rem;
   --hero-top: calc(var(--hero-height-half) * -1);
-  --hero-left: calc(50% - var(--hero-width-half));
+  --hero-left: calc(calc(50% - var(--hero-width-half)) - 0.9375rem);
 }
 
-.hero {
-  position: absolute;
-  top: var(--hero-top);
-  left: var(--hero-left);
-  height: 13.5rem;
-  width: calc(var(--hero-width-half) * 2);
+.hero-wrapper {
+  position: relative;
+  height: 6.5rem;
+  width: 14.8125rem;
+  background-image: url(../../images/bg-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
-.hero img {
-  width: 100%;
+@media (min-width: 50.3125rem) {
+  .hero-wrapper {
+    width: 45%;
+    height: auto;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    background-image: url(../../images/bg-pattern-desktop.svg);
+    background-size: auto 140%;
+    background-position: right;
+  }
 }
-.hero #pattern {
-  position: absolute;
-  top: var(--hero-height-half);
-  left: 0;
+@media (min-width: 59.75rem) {
+  .hero-wrapper {
+    max-width: 21.8125rem;
+  }
+}
+.hero-wrapper .hero {
+  margin-top: calc(-1 * calc(0.5rem + var(--hero-height-half)));
+}
+@media (min-width: 50.3125rem) {
+  .hero-wrapper .hero {
+    margin-top: 0;
+    overflow: hidden;
+    display: flex;
+  }
+}
+.hero-wrapper .hero img {
+  display: block;
+}
+.hero-wrapper .hero img#illustration {
+  margin-left: calc(-1 * 1.75rem);
+  content: url(../../images/illustration-woman-online-mobile.svg);
+}
+@media (min-width: 50.3125rem) {
+  .hero-wrapper .hero img#illustration {
+    content: url(../../images/illustration-woman-online-desktop.svg);
+    margin-left: calc(-1 * 4.375rem);
+    width: 22.625rem;
+  }
+}
+@media (min-width: 59.75rem) {
+  .hero-wrapper .hero img#illustration {
+    width: 120%;
+    max-width: 26.125rem;
+  }
+}
+.hero-wrapper img#desktop-box {
+  display: none;
+}
+@media (min-width: 50.3125rem) {
+  .hero-wrapper img#desktop-box {
+    display: block;
+    position: absolute;
+    top: 42%;
+    left: -27%;
+    width: 45%;
+  }
 }
 
 :root {
@@ -60,7 +135,19 @@ body {
 }
 
 .faq {
-  margin-top: 1.875rem;
+  padding-top: 1.875rem;
+  color: #1d1e35;
+}
+@media (min-width: 50.3125rem) {
+  .faq {
+    width: 55%;
+    padding: 2.5rem;
+  }
+}
+@media (min-width: 69.6875rem) {
+  .faq {
+    padding-right: 6%;
+  }
 }
 .faq .title {
   text-align: center;
@@ -107,6 +194,9 @@ body {
 }
 .faq .sections .expand > .question {
   font-weight: 700;
+}
+.faq .sections :not(.expand) > .question:hover {
+  color: #f47c57;
 }
 .faq .sections .expand > .answer {
   margin-top: 0.625rem;
