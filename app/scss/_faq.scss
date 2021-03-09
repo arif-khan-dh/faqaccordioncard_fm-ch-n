@@ -73,17 +73,14 @@
                 overflow: hidden;
                 transition: max-height var(--t1) ease-in-out, margin-top 300ms ease-in-out;
             }
-
-            &:focus > .question{
-                color: $softRed;
-            }
         }
 
         .expand > .question {
             font-weight: 700;
         }
 
-        :not(.expand) > .question:hover {
+        :not(.expand) > .question:hover,
+        :not(.expand):focus > .question {
             color: $softRed;
         }
 

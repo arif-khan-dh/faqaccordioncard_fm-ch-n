@@ -194,13 +194,11 @@ body {
   overflow: hidden;
   transition: max-height var(--t1) ease-in-out, margin-top 300ms ease-in-out;
 }
-.faq .sections .section:focus > .question {
-  color: #f47c57;
-}
 .faq .sections .expand > .question {
   font-weight: 700;
 }
-.faq .sections :not(.expand) > .question:hover {
+.faq .sections :not(.expand) > .question:hover,
+.faq .sections :not(.expand):focus > .question {
   color: #f47c57;
 }
 .faq .sections .expand > .answer {
