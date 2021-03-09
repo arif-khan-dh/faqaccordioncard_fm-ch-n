@@ -22,16 +22,16 @@ for (let i = 0; i < arraySection.length; i++){
 
 function expand (section, action) {
     const answer = section.querySelector('.answer');
-    const arrow = section.querySelector('.arrow');
+    // const arrow = section.querySelector('.arrow');
     if (action === 0) {
         section.classList.remove('expand');
-        arrow.classList.remove('arrow-up');
+        // arrow.classList.remove('arrow-up');
     } else if (action === 1) {
         section.classList.add('expand');
-        arrow.classList.add('arrow-up');
+        // arrow.classList.add('arrow-up');
     } else {
         section.classList.toggle('expand');
-        arrow.classList.toggle('arrow-up');
+        // arrow.classList.toggle('arrow-up');
     }
 
     if (answer.style.maxHeight && action !== 1){

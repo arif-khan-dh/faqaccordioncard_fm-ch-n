@@ -42,27 +42,9 @@
                 justify-content: space-between;
                 align-items: center;
 
-                // &::after {
-                //     content: url(../../images/icon-arrow-down.svg);
-
-                // }
-
-                img {
-                    display: inline-block;
-                    height: 100%;
-                    width: auto;
-                }
-
-                .arrow {
-                    background-image: url(../../images/icon-arrow-down.svg);
-                    background-repeat: no-repeat;
-                    width: toRem(10px);
-                    height: 7px;
+                &::after {
+                    content: url(../../images/icon-arrow-down.svg);
                     transition: transform var(--t1) linear;
-                }
-
-                .arrow-up {
-                    transform: rotate(180deg);
                 }
             }
 
@@ -77,6 +59,10 @@
 
         .expand > .question {
             font-weight: 700;
+        }
+
+        .expand > .question::after {
+            transform: rotate(180deg);
         }
 
         :not(.expand) > .question:hover,

@@ -172,20 +172,9 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.faq .sections .section .question img {
-  display: inline-block;
-  height: 100%;
-  width: auto;
-}
-.faq .sections .section .question .arrow {
-  background-image: url(../../images/icon-arrow-down.svg);
-  background-repeat: no-repeat;
-  width: 0.625rem;
-  height: 7px;
+.faq .sections .section .question::after {
+  content: url(../../images/icon-arrow-down.svg);
   transition: transform var(--t1) linear;
-}
-.faq .sections .section .question .arrow-up {
-  transform: rotate(180deg);
 }
 .faq .sections .section .answer {
   margin-top: 0;
@@ -196,6 +185,9 @@ body {
 }
 .faq .sections .expand > .question {
   font-weight: 700;
+}
+.faq .sections .expand > .question::after {
+  transform: rotate(180deg);
 }
 .faq .sections :not(.expand) > .question:hover,
 .faq .sections :not(.expand):focus > .question {
