@@ -52,6 +52,7 @@
                 }
 
                 @include breakpoint-up(medium) {
+                    content: url(../../images/illustration-woman-online-desktop.svg);
                     width: 120%;
                     max-width: toRem(418px);
                 }

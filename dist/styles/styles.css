@@ -113,6 +113,7 @@ body {
 }
 @media (min-width: 59.75rem) {
   .hero-wrapper .hero img#illustration {
+    content: url(../../images/illustration-woman-online-desktop.svg);
     width: 120%;
     max-width: 26.125rem;
   }
@@ -161,6 +162,7 @@ body {
 .faq .sections .section {
   border-bottom: 1px solid #e7e7e9;
   padding: 1.25rem 0;
+  cursor: pointer;
 }
 .faq .sections .section:first-child {
   padding-top: 0;
@@ -191,6 +193,9 @@ body {
   max-height: 0;
   overflow: hidden;
   transition: max-height var(--t1) ease-in-out, margin-top 300ms ease-in-out;
+}
+.faq .sections .section:focus > .question {
+  color: #f47c57;
 }
 .faq .sections .expand > .question {
   font-weight: 700;
